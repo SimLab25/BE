@@ -15,10 +15,15 @@ const alatRoutes = require('./app/routes/alatRoutes');
 const userRoutes = require('./app/routes/userRoutes');
 const peminjamanRoutes = require('./app/routes/peminjamanRoutes');
 const pendaftaranRoutes = require('./app/routes/pendaftaranRoutes');
+const authRoutes = require('./app/routes/authRoutes');
+const matkulRoutes = require('./app/routes/mataKuliahRoutes');
+
 app.use("/alat", alatRoutes);
 app.use('/users', userRoutes);
 app.use('/peminjaman', peminjamanRoutes);
 app.use('/pendaftaran', pendaftaranRoutes);
+app.use('/auth', authRoutes);
+app.use('/mata-kuliah', matkulRoutes);
 
 app.listen(PORT, () => {
   console.log(`✅ Server jalan di port ${PORT}`);
