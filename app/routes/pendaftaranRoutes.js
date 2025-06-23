@@ -4,6 +4,6 @@ const pendaftaranController = require('../controllers/pendaftaranPraktikumContro
 
 router.get('/', pendaftaranController.getAllPendaftaran);
 router.post('/', pendaftaranController.createPendaftaran);
-router.delete('/:id', pendaftaranController.deletePendaftaran); 
+router.delete('/:id', pendaftaranController.deletePendaftaran);
 
 module.exports = router;

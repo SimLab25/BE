@@ -2,7 +2,12 @@ const pool = require('../../db');
 
 exports.getAllPeminjaman = async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM peminjaman');
+    const result = await pool.query(`
+      SELECT peminjaman.*, users.nama AS nama_user, alat.nama_alat 
+      FROM peminjaman 
+      JOIN users ON peminjaman.id_user = users.id
+      JOIN alat ON peminjaman.id_alat = alat.alat_id
+    `);
     res.json(result.rows);
   } catch (err) {
     res.status(500).json({ error: err.message });
